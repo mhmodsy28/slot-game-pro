@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماكينة الحظ - Golden Slots</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- رأس اللعبة -->
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">🎰 ماكينة الحظ الذهبية 🎰</h1>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="label">الرصيد:</span>
+                        <span class="value" id="balance">1000</span> 💰
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">الرهان:</span>
+                        <span class="value" id="betAmount">100</span> 💵
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">الفوز:</span>
+                        <span class="value" id="winAmount">0</span> 🏆
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- منطقة اللعبة الرئيسية -->
+        <main class="game-main">
+            <!-- ماكينة الحظ -->
+            <div class="slot-machine">
+                <div class="reels-container">
+                    <div class="reel" id="reel1">
+                        <div class="reel-content">
+                            <div class="symbol">🍎</div>
+                            <div class="symbol">🍊</div>
+                            <div class="symbol">🍋</div>
+                            <div class="symbol">🍌</div>
+                            <div class="symbol">⭐</div>
+                            <div class="symbol">💎</div>
+                            <div class="symbol">👑</div>
+                            <div class="symbol">🎁</div>
+                        </div>
+                    </div>
+
+                    <div class="reel" id="reel2">
+                        <div class="reel-content">
+                            <div class="symbol">🍎</div>
+                            <div class="symbol">🍊</div>
+                            <div class="symbol">🍋</div>
+                            <div class="symbol">🍌</div>
+                            <div class="symbol">⭐</div>
+                            <div class="symbol">💎</div>
+                            <div class="symbol">👑</div>
+                            <div class="symbol">🎁</div>
+                        </div>
+                    </div>
+
+                    <div class="reel" id="reel3">
+                        <div class="reel-content">
+                            <div class="symbol">🍎</div>
+                            <div class="symbol">🍊</div>
+                            <div class="symbol">🍋</div>
+                            <div class="symbol">🍌</div>
+                            <div class="symbol">⭐</div>
+                            <div class="symbol">💎</div>
+                            <div class="symbol">👑</div>
+                            <div class="symbol">🎁</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- خط الفوز -->
+                <div class="win-line"></div>
+            </div>
+
+            <!-- رسالة النتيجة -->
+            <div class="result-message" id="resultMessage"></div>
+
+            <!-- لوحة المعلومات -->
+            <div class="info-panel">
+                <div class="paylines-info">
+                    <h3>جدول الأرباح</h3>
+                    <div class="payline-item">
+                        <span>3 🎁</span> <span class="prize">500x</span>
+                    </div>
+                    <div class="payline-item">
+                        <span>3 👑</span> <span class="prize">300x</span>
+                    </div>
+                    <div class="payline-item">
+                        <span>3 💎</span> <span class="prize">200x</span>
+                    </div>
+                    <div class="payline-item">
+                        <span>3 ⭐</span> <span class="prize">150x</span>
+                    </div>
+                    <div class="payline-item">
+                        <span>3 متساوي</span> <span class="prize">50x</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- لوحة التحكم -->
+        <div class="control-panel">
+            <div class="bet-controls">
+                <button class="btn btn-bet" id="betMinus">➖</button>
+                <div class="bet-display">
+                    <input type="number" id="betInput" value="100" min="10" max="1000">
+                </div>
+                <button class="btn btn-bet" id="betPlus">➕</button>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-spin" id="spinBtn">🎰 اضغط للعب</button>
+                <button class="btn btn-auto" id="autoSpinBtn">🔄 لعب تلقائي</button>
+                <button class="btn btn-reset" id="resetBtn">🔄 إعادة تعيين</button>
+            </div>
+
+            <div class="quick-bets">
+                <button class="quick-bet" data-bet="50">50</button>
+                <button class="quick-bet" data-bet="100">100</button>
+                <button class="quick-bet" data-bet="500">500</button>
+                <button class="quick-bet" data-bet="1000">1000</button>
+            </div>
+        </div>
+
+        <!-- سجل الفوز -->
+        <div class="history-panel">
+            <h3>🏆 آخر الأرباح</h3>
+            <div class="history-list" id="historyList">
+                <p class="empty-history">لا توجد أرباح حتى الآن</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- أصوات اللعبة -->
+    <audio id="spinSound" src="sounds/spin.mp3"></audio>
+    <audio id="winSound" src="sounds/win.mp3"></audio>
+    <audio id="loseSound" src="sounds/lose.mp3"></audio>
+    <audio id="tickSound" src="sounds/tick.mp3"></audio>
+
+    <script src="js/game.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
